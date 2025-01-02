@@ -1,35 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+// import Body from "./components/background";
+import Scroller from "./components/scroller";
+import Section from "./components/section";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Scroller>
+      <Section className="text-white flex items-center justify-center">
+        <h1 className="font-inter font-semibold text-5xl">
+          Muito prazer, me chamo{" "}
+          <span className="text-gradient font-black">Vitor</span>.
+          <br />
+          Eu tiro suas <span className="font-light italic">ideias</span> do
+          papel!
+        </h1>
+      </Section>
+      <Section className="text-white flex items-center justify-center">
+        <p>Hello, World 2!</p>
+      </Section>
+    </Scroller>
+  );
 }
 
-export default App
+export default App;
