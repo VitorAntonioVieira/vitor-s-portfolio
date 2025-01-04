@@ -5,7 +5,9 @@ type SectionProps = {
 
 const Section = ({ children, className }: SectionProps) => {
   return (
-    <div className={`flex ${className} w-container h-full`}>{children}</div>
+    <section className={`snap-start flex ${className} w-container h-full`}>
+      {children}
+    </section>
   );
 };
 
