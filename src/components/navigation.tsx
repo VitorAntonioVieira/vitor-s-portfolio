@@ -7,20 +7,20 @@ const Navigation = () => {
   const [section, setSection] = useState<string>("Início");
 
   return (
-    <div className="flex">
+    <div className="fixed w-[70vw] z-20">
       <div className="top_nav flex justify-evenly items-center">
         <button
-          className="flex align-center"
-          onFocus={() => {
-            setOpen(true);
+          className="justify-center align-center bg-white rounded-3xl"
+          onClick={() => {
+            setOpen(!open);
             console.log(open);
           }}
         >
           {section}
-          <span className="material-symbols-outlined">keyboard_arrow_down</span>
+          {/* <span className="material-symbols-outlined">keyboard_arrow_down</span> */}
         </button>
         {open && (
-          <div className="menu">
+          <div className="menu w-[100vw] h-20 bg-white">
             <ul className="flex">
               <li className="item">oi</li>
               <li className="item">oi</li>

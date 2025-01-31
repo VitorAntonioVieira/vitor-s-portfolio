@@ -1,6 +1,5 @@
 import React from "react";
 import "../App.css";
-import Navigation from "./navigation";
 
 type ScrollerProps = {
   children: React.ReactNode;
@@ -8,13 +7,12 @@ type ScrollerProps = {
 
 const Scroller: React.FC<ScrollerProps> = ({ children }) => {
   return (
-    <>
-      <div className="peito h-screen w-container"></div>
-      <Navigation />
-      <div className="inline-flex flex-row flex-none h-screen overflow-y-hidden scroll">
+    <div className={`scroll flex flex-col w-[300vw]`}>
+      <div className="peito h-screen w-full"></div>
+      <div className="scroll inline-flex flex-row flex-none h-screen overflow-x-scroll snap-x snap-mandatory">
         {children}
       </div>
-    </>
+    </div>
   );
 };
 

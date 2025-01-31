@@ -33,7 +33,7 @@
         if (event.deltaY !== 0) {
           event.preventDefault();
           window.scrollBy({
-            left: event.deltaY,
+            left: event.deltaY < 0 ? window.innerWidth * -1 : window.innerWidth,
             behavior: "smooth",
           });
         }
