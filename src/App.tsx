@@ -1,5 +1,5 @@
 import "./App.css";
-// import Body from "./components/background";
+import 'react-material-symbols/rounded';
 import Navigation from "./components/navigation";
 import Scroller from "./components/scroller";
 import Section from "./components/section";
@@ -10,7 +10,7 @@ function App() {
       <Navigation />
 
       <Scroller>
-        <Section className="text-white flex items-center justify-center">
+        <Section className="text-white flex items-center justify-center px-[20vw]">
           <h1 className="font-inter font-semibold text-5xl">
             Muito prazer, me chamo{" "}
             <span className="text-gradient font-black">Vitor</span>.

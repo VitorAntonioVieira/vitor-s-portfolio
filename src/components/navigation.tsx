@@ -1,35 +1,53 @@
-import React from "react";
-
-const { useState } = React;
+import React, { useState } from "react";
+import { MaterialSymbol } from "react-material-symbols";
 
 const Navigation = () => {
-  const [open, setOpen] = useState<boolean>(false);
-  const [section, setSection] = useState<string>("Início");
+  const sections = ["Início", "Sobre", "HortaConnect", "SenEye"];
+  const [section, setSection] = useState(sections[0]);
+
+  function handleSectionChange(direction: number) {
+    const currentIndex = sections.indexOf(section);
+    let newIndex
+  }
+
+  function handleNavClick(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+    const buttons = document.querySelectorAll(".nav button");
+    console.log(e.currentTarget)
+    if (e.currentTarget == buttons[0]) {
+      e.preventDefault();
+      setTimeout(() => {
+        window.scrollBy({
+          left: window.innerWidth * -1,
+          behavior: "smooth",
+        });
+        handleSectionChange(-1)
+      }, 200)
+    } else if (e.currentTarget == buttons[1]) {
+      e.preventDefault();
+      setTimeout(() => {
+        window.scrollBy({
+          left: window.innerWidth,
+          behavior: "smooth",
+        })
+      }, 200)
+    }
+    ;
+  }
 
   return (
-    <div className="fixed w-[70vw] z-20">
-      <div className="top_nav flex justify-evenly items-center">
-        <button
-          className="justify-center align-center bg-white rounded-3xl"
-          onClick={() => {
-            setOpen(!open);
-            console.log(open);
-          }}
-        >
-          {section}
-          {/* <span className="material-symbols-outlined">keyboard_arrow_down</span> */}
-        </button>
-        {open && (
-          <div className="menu w-[100vw] h-20 bg-white">
-            <ul className="flex">
-              <li className="item">oi</li>
-              <li className="item">oi</li>
-              <li className="item">oi</li>
-            </ul>
-          </div>
-        )}
+    <>
+      <div className="fixed top-[2vh] w-full flex justify-center">
+        <span className=" w-[8vw] text-white text-[18px] text-center font-[600] border-b-2 border-b-white">{section}</span>
       </div>
-    </div>
+      <div className="nav fixed w-full h-full flex items-center justify-between">
+        <button className="pl-[1vw]" onClick={handleNavClick}>
+          <MaterialSymbol icon="arrow_back_ios" size={48} fill color='white' />
+        </button>
+        <button onClick={handleNavClick}>
+          <MaterialSymbol icon="arrow_forward_ios" size={48} fill color='white' />
+        </button>
+      </div>
+    </>
   );
 };
 
