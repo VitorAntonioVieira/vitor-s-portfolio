@@ -7,7 +7,7 @@ type ScrollerProps = {
 
 const Scroller: React.FC<ScrollerProps> = ({ children }) => {
   return (
-    <div className={`scroll flex flex-col w-[300vw]`}>
+    <div className={`scroll inline-flex flex-col`}>
       <div className="peito h-screen w-full"></div>
       <div className="scroll inline-flex flex-row flex-none h-screen overflow-x-scroll snap-x snap-mandatory">
         {children}

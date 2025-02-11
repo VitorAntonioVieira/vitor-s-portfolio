@@ -3,6 +3,7 @@ import 'react-material-symbols/rounded';
 import Navigation from "./components/navigation";
 import Scroller from "./components/scroller";
 import Section from "./components/section";
+import About from "./components/about";
 
 function App() {
   return (
@@ -20,10 +21,19 @@ function App() {
           </h1>
         </Section>
         <Section className="text-white flex items-center justify-center">
-          <p>Hello, World 2!</p>
+          <About />
         </Section>
         <Section className="text-white flex items-center justify-center">
-          <p>Hello, World 2!</p>
+          <p>HortaConnect</p>
+        </Section>
+        <Section className="text-white flex items-center justify-center">
+          <p>SEN-Eye</p>
+        </Section>
+        <Section className="text-white flex items-center justify-center">
+          <p>SeniorCare</p>
+        </Section>
+        <Section className="text-white flex items-center justify-center">
+          <p>MagSmile</p>
         </Section>
       </Scroller>
     </>
